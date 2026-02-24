@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendorly Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .error {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vendorly Application Test</h1>
+        <p class="error">The application couldn't load due to missing web server.</p>
+        <p>Please run:</p>
+        <code>npm run preview</code>
+        <p>Or use a local server to serve the <strong>dist</strong> folder</p>
+        
+        <!-- Attempt to load the main JS file with error handling -->
+        <div id="app-status"></div>
+    </div>
+
+    <script>
+        // Display instructions for resolving the issue
+        document.addEventListener('DOMContentLoaded', function() {
+            const appStatus = document.getElementById('app-status');
+            appStatus.innerHTML = `
+                <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 4px;">
+                    <h3>How to Fix This Issue:</h3>
+                    <ol style="text-align: left; margin: 10px 0;">
+                        <li>Open Command Prompt as Administrator</li>
+                        <li>Navigate to the vendorly directory: <code>cd c:\\Users\\ASUS\\Desktop\\vendorly</code></li>
+                        <li>Run: <code>npm install</code> (if not already done)</li>
+                        <li>Run: <code>npm run preview</code></li>
+                        <li>Visit <a href="http://localhost:4173" target="_blank">http://localhost:4173</a></li>
+                    </ol>
+                    <p><strong>Alternative:</strong> Use a local server like Live Server extension in VS Code to serve the dist folder.</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
